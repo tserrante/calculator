@@ -41,10 +41,10 @@ namespace calculator
         public static double Sqrt(double n1)
         { return Math.Sqrt(n1); }
 
-        public static int nrt(int n1, int n2)
+        public static int NthRT(int n1, int n2)
         { return (int)Math.Pow(n1, 1/n2); }
 
-        public static double nrt(double n1, double n2)
+        public static double NthRT(double n1, double n2)
         { return Math.Pow(n1, 1/n2); }
 
         public static int Sq(int n1)
@@ -53,10 +53,10 @@ namespace calculator
         public static double Sq(double n1)
         { return Math.Pow(n1, 2); }
 
-        public static int x_n(int n1, int n2)
+        public static int XtoN(int n1, int n2)
         { return (int)Math.Pow(n1, n2); }
         
-        public static double x_n(double n1, double n2)
+        public static double XtoN(double n1, double n2)
         { return Math.Pow(n1, n2); }
     }
 }

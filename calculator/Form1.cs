@@ -115,7 +115,7 @@ namespace calculator
                     break;
 
                 case "x^n":
-                    result.Text = Operators.x_n(value, Double.Parse(result.Text)).ToString();
+                    result.Text = Operators.XtoN(value, Double.Parse(result.Text)).ToString();
                     break;
 
                 case "Sq":
@@ -127,7 +127,7 @@ namespace calculator
                     break;
 
                 case "nrt":
-                    result.Text = Operators.nrt(value, Double.Parse(result.Text)).ToString();
+                    result.Text = Operators.NthRT(value, Double.Parse(result.Text)).ToString();
                     break;
 
                 default:
