@@ -44,7 +44,7 @@ namespace calculator
             this.mult = new System.Windows.Forms.Button();
             this.sub = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
-            this.equals = new System.Windows.Forms.Button();
+            this.EqualBtn = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.ClearEntry = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.TextBox();
@@ -55,6 +55,7 @@ namespace calculator
             this.button4 = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
             this.equation = new System.Windows.Forms.Label();
+            this.GrabFocus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // seven
@@ -64,6 +65,7 @@ namespace calculator
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(45, 45);
             this.seven.TabIndex = 0;
+            this.seven.TabStop = false;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = true;
             this.seven.Click += new System.EventHandler(this.Button_Click);
@@ -75,6 +77,7 @@ namespace calculator
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(45, 45);
             this.eight.TabIndex = 1;
+            this.eight.TabStop = false;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = true;
             this.eight.Click += new System.EventHandler(this.Button_Click);
@@ -86,6 +89,7 @@ namespace calculator
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(45, 45);
             this.nine.TabIndex = 2;
+            this.nine.TabStop = false;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = true;
             this.nine.Click += new System.EventHandler(this.Button_Click);
@@ -97,6 +101,7 @@ namespace calculator
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(45, 45);
             this.four.TabIndex = 3;
+            this.four.TabStop = false;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = true;
             this.four.Click += new System.EventHandler(this.Button_Click);
@@ -108,6 +113,7 @@ namespace calculator
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(45, 45);
             this.five.TabIndex = 4;
+            this.five.TabStop = false;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = true;
             this.five.Click += new System.EventHandler(this.Button_Click);
@@ -119,6 +125,7 @@ namespace calculator
             this.six.Name = "six";
             this.six.Size = new System.Drawing.Size(45, 45);
             this.six.TabIndex = 5;
+            this.six.TabStop = false;
             this.six.Text = "6";
             this.six.UseVisualStyleBackColor = true;
             this.six.Click += new System.EventHandler(this.Button_Click);
@@ -130,6 +137,7 @@ namespace calculator
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(45, 45);
             this.one.TabIndex = 6;
+            this.one.TabStop = false;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = true;
             this.one.Click += new System.EventHandler(this.Button_Click);
@@ -141,6 +149,7 @@ namespace calculator
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(45, 45);
             this.two.TabIndex = 7;
+            this.two.TabStop = false;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = true;
             this.two.Click += new System.EventHandler(this.Button_Click);
@@ -152,6 +161,7 @@ namespace calculator
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(45, 45);
             this.three.TabIndex = 8;
+            this.three.TabStop = false;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
             this.three.Click += new System.EventHandler(this.Button_Click);
@@ -163,6 +173,7 @@ namespace calculator
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(45, 45);
             this.zero.TabIndex = 9;
+            this.zero.TabStop = false;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = true;
             this.zero.Click += new System.EventHandler(this.Button_Click);
@@ -174,6 +185,7 @@ namespace calculator
             this.dec.Name = "dec";
             this.dec.Size = new System.Drawing.Size(45, 45);
             this.dec.TabIndex = 11;
+            this.dec.TabStop = false;
             this.dec.Text = ".";
             this.dec.UseVisualStyleBackColor = true;
             this.dec.Click += new System.EventHandler(this.Button_Click);
@@ -185,9 +197,10 @@ namespace calculator
             this.div.Name = "div";
             this.div.Size = new System.Drawing.Size(45, 45);
             this.div.TabIndex = 15;
+            this.div.TabStop = false;
             this.div.Text = "/";
             this.div.UseVisualStyleBackColor = true;
-            this.div.Click += new System.EventHandler(this.operator_click);
+            this.div.Click += new System.EventHandler(this.Operator_click);
             // 
             // mult
             // 
@@ -196,9 +209,10 @@ namespace calculator
             this.mult.Name = "mult";
             this.mult.Size = new System.Drawing.Size(45, 45);
             this.mult.TabIndex = 14;
+            this.mult.TabStop = false;
             this.mult.Text = "*";
             this.mult.UseVisualStyleBackColor = true;
-            this.mult.Click += new System.EventHandler(this.operator_click);
+            this.mult.Click += new System.EventHandler(this.Operator_click);
             // 
             // sub
             // 
@@ -207,9 +221,10 @@ namespace calculator
             this.sub.Name = "sub";
             this.sub.Size = new System.Drawing.Size(45, 45);
             this.sub.TabIndex = 13;
+            this.sub.TabStop = false;
             this.sub.Text = "-";
             this.sub.UseVisualStyleBackColor = true;
-            this.sub.Click += new System.EventHandler(this.operator_click);
+            this.sub.Click += new System.EventHandler(this.Operator_click);
             // 
             // add
             // 
@@ -218,20 +233,22 @@ namespace calculator
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(45, 45);
             this.add.TabIndex = 12;
+            this.add.TabStop = false;
             this.add.Text = "+";
             this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.operator_click);
+            this.add.Click += new System.EventHandler(this.Operator_click);
             // 
-            // equals
+            // EqualBtn
             // 
-            this.equals.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.equals.Location = new System.Drawing.Point(165, 276);
-            this.equals.Name = "equals";
-            this.equals.Size = new System.Drawing.Size(96, 46);
-            this.equals.TabIndex = 16;
-            this.equals.Text = "=";
-            this.equals.UseVisualStyleBackColor = true;
-            this.equals.Click += new System.EventHandler(this.equals_Click);
+            this.EqualBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EqualBtn.Location = new System.Drawing.Point(165, 276);
+            this.EqualBtn.Name = "EqualBtn";
+            this.EqualBtn.Size = new System.Drawing.Size(96, 46);
+            this.EqualBtn.TabIndex = 16;
+            this.EqualBtn.TabStop = false;
+            this.EqualBtn.Text = "=";
+            this.EqualBtn.UseVisualStyleBackColor = true;
+            this.EqualBtn.Click += new System.EventHandler(this.Equals_Click);
             // 
             // clear
             // 
@@ -240,6 +257,7 @@ namespace calculator
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(45, 45);
             this.clear.TabIndex = 17;
+            this.clear.TabStop = false;
             this.clear.Text = "C";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.Clear_click);
@@ -251,6 +269,7 @@ namespace calculator
             this.ClearEntry.Name = "ClearEntry";
             this.ClearEntry.Size = new System.Drawing.Size(45, 45);
             this.ClearEntry.TabIndex = 18;
+            this.ClearEntry.TabStop = false;
             this.ClearEntry.Text = "CE";
             this.ClearEntry.UseVisualStyleBackColor = true;
             this.ClearEntry.Click += new System.EventHandler(this.ClearEntry_Click);
@@ -262,6 +281,7 @@ namespace calculator
             this.result.Name = "result";
             this.result.Size = new System.Drawing.Size(247, 36);
             this.result.TabIndex = 19;
+            this.result.TabStop = false;
             this.result.Text = "0";
             this.result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -272,9 +292,10 @@ namespace calculator
             this.square.Name = "square";
             this.square.Size = new System.Drawing.Size(45, 45);
             this.square.TabIndex = 22;
+            this.square.TabStop = false;
             this.square.Text = "Sq";
             this.square.UseVisualStyleBackColor = true;
-            this.square.Click += new System.EventHandler(this.operator_click);
+            this.square.Click += new System.EventHandler(this.Operator_click);
             // 
             // button1
             // 
@@ -284,9 +305,10 @@ namespace calculator
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 45);
             this.button1.TabIndex = 23;
+            this.button1.TabStop = false;
             this.button1.Text = "x^n";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.operator_click);
+            this.button1.Click += new System.EventHandler(this.Operator_click);
             // 
             // button2
             // 
@@ -296,9 +318,10 @@ namespace calculator
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 45);
             this.button2.TabIndex = 24;
+            this.button2.TabStop = false;
             this.button2.Text = "sqrt";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.operator_click);
+            this.button2.Click += new System.EventHandler(this.Operator_click);
             // 
             // button3
             // 
@@ -308,9 +331,10 @@ namespace calculator
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 45);
             this.button3.TabIndex = 25;
+            this.button3.TabStop = false;
             this.button3.Text = "nrt";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.operator_click);
+            this.button3.Click += new System.EventHandler(this.Operator_click);
             // 
             // button4
             // 
@@ -319,6 +343,7 @@ namespace calculator
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 45);
             this.button4.TabIndex = 26;
+            this.button4.TabStop = false;
             this.button4.Text = "+/-";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Negate_Click);
@@ -330,9 +355,10 @@ namespace calculator
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(45, 45);
             this.del.TabIndex = 27;
+            this.del.TabStop = false;
             this.del.Text = "del";
             this.del.UseVisualStyleBackColor = true;
-            this.del.Click += new System.EventHandler(this.del_click);
+            this.del.Click += new System.EventHandler(this.Del_click);
             // 
             // equation
             // 
@@ -346,8 +372,17 @@ namespace calculator
             this.equation.TabIndex = 21;
             this.equation.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // GrabFocus
+            // 
+            this.GrabFocus.AutoSize = true;
+            this.GrabFocus.Location = new System.Drawing.Point(12, 9);
+            this.GrabFocus.Name = "GrabFocus";
+            this.GrabFocus.Size = new System.Drawing.Size(0, 15);
+            this.GrabFocus.TabIndex = 28;
+            // 
             // Form1
             // 
+            this.AcceptButton = this.EqualBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -363,7 +398,7 @@ namespace calculator
             this.Controls.Add(this.result);
             this.Controls.Add(this.ClearEntry);
             this.Controls.Add(this.clear);
-            this.Controls.Add(this.equals);
+            this.Controls.Add(this.EqualBtn);
             this.Controls.Add(this.div);
             this.Controls.Add(this.mult);
             this.Controls.Add(this.sub);
@@ -379,12 +414,14 @@ namespace calculator
             this.Controls.Add(this.nine);
             this.Controls.Add(this.eight);
             this.Controls.Add(this.seven);
+            this.Controls.Add(this.GrabFocus);
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -406,8 +443,7 @@ namespace calculator
         private System.Windows.Forms.Button sub;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.TextBox result;
-        private System.Windows.Forms.Button equals;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button EqualBtn;
         private System.Windows.Forms.Button square;
         private System.Windows.Forms.Button dec;
         private System.Windows.Forms.Button div;
@@ -420,6 +456,7 @@ namespace calculator
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Label equation;
+        private System.Windows.Forms.Label GrabFocus;
     }
 }
 
